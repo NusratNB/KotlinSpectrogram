@@ -36,5 +36,16 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/Nusrat/Java_libs/commons-csv-1.9.0-bin/commons-csv-1.9.0/commons-csv-1.9.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://D:/Nusrat/Java_libs/commons-csv-1.9.0-bin/commons-csv-1.9.0/commons-csv-1.9.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

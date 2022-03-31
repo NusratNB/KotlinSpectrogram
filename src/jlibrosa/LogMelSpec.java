@@ -2,10 +2,7 @@ package jlibrosa;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.math.BigDecimal;
 
-import jlibrosa.FileFormatNotSupportedException;
-import jlibrosa.WavFileException;
 /**
  * yangqin
  * This class extracts LogMelSpectrogram based on JLibrosa Audio features for
@@ -13,6 +10,8 @@ import jlibrosa.WavFileException;
  *
  */
 public class LogMelSpec {
+
+    public static float audioData[];
 
     public static double[][] main(String Path) throws IOException, WavFileException, FileFormatNotSupportedException {
         String audioFilePath = Path;
@@ -27,6 +26,7 @@ public class LogMelSpec {
          */
 
         float audioFeatureValues[] = jLibrosa.loadAndRead(audioFilePath, defaultSampleRate, defaultAudioDuration);
+        audioData = audioFeatureValues;
         // System.out.println(audioFeatureValues.length);
         //for (int j = 0; j < 10; j++) {
         //    System.out.printf("%.10f%n", audioFeatureValues[j]);
@@ -44,7 +44,7 @@ public class LogMelSpec {
         audioPreemphasisValue[0] = audioFeatureValues[0];
         //System.out.println(audioPreemphasisValue[0]);
         for (int i = 1; i < audioFeatureValues.length; i++) {
-            double pre = 0.0f;
+            double pre;
             pre = audioFeatureValues[i] - audioFeatureValues[i - 1] * 0.96875;
             audioPreemphasisValue[i] = (float) pre;
         }
@@ -69,7 +69,14 @@ public class LogMelSpec {
         //        System.out.printf("%.10f%n", logmelspec[i][j]);
         //    }
         //}
+
+
+
         return logmelspec;
+    }
+
+    public static float[] getAudioData(){
+        return audioData;
     }
 }
 

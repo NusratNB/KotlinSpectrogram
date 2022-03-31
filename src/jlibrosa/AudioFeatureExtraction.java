@@ -17,8 +17,8 @@ public class AudioFeatureExtraction {
 
     private double sampleRate = 16000.0;
     private int length = -1;
-    private double fMax = sampleRate / 2.0;
-    private double fMin = 0.0;
+    private double fMax = 7600.0;
+    private double fMin = 80.0;
     private int n_fft = 512;
     private int hop_length = 160;
     private int n_mels = 40;

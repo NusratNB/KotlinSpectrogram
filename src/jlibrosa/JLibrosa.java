@@ -28,11 +28,11 @@ public class JLibrosa {
     private int sampleRate = -1;
     private int noOfChannels = -1;
 
-    private double fMax = 44100 / 2.0;
-    private double fMin = 0.0;
-    private int n_fft = 2048;
-    private int hop_length = 512;
-    private int n_mels = 128;
+    private double fMax = 7600.0; // 44100 / 2.0;
+    private double fMin = 80.0; // 0.0;
+    private int n_fft = 400; //2048;
+    private int hop_length = 160;// 512;
+    private int n_mels = 64; // 128;
 
     public double getfMax() {
         return fMax;

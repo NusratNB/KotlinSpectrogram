@@ -272,7 +272,7 @@ public class WavFile {
             bufferPointer++;
         }
 
-        return val/32767.0;
+        return val/32768.0;
     }
 
     /**
